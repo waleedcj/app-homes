@@ -11,9 +11,33 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as ServicesImport } from './routes/services'
+import { Route as ContactImport } from './routes/contact'
+import { Route as BlogImport } from './routes/blog'
+import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
+
+const ServicesRoute = ServicesImport.update({
+  path: '/services',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ContactRoute = ContactImport.update({
+  path: '/contact',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const BlogRoute = BlogImport.update({
+  path: '/blog',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AboutRoute = AboutImport.update({
+  path: '/about',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const IndexRoute = IndexImport.update({
   path: '/',
@@ -31,12 +55,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutImport
+      parentRoute: typeof rootRoute
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogImport
+      parentRoute: typeof rootRoute
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactImport
+      parentRoute: typeof rootRoute
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
 // Create and export the route tree
 
-export const routeTree = rootRoute.addChildren({ IndexRoute })
+export const routeTree = rootRoute.addChildren({
+  IndexRoute,
+  AboutRoute,
+  BlogRoute,
+  ContactRoute,
+  ServicesRoute,
+})
 
 /* prettier-ignore-end */
 
@@ -46,11 +104,27 @@ export const routeTree = rootRoute.addChildren({ IndexRoute })
     "__root__": {
       "filePath": "__root.ts",
       "children": [
-        "/"
+        "/",
+        "/about",
+        "/blog",
+        "/contact",
+        "/services"
       ]
     },
     "/": {
       "filePath": "index.ts"
+    },
+    "/about": {
+      "filePath": "about.ts"
+    },
+    "/blog": {
+      "filePath": "blog.ts"
+    },
+    "/contact": {
+      "filePath": "contact.ts"
+    },
+    "/services": {
+      "filePath": "services.ts"
     }
   }
 }

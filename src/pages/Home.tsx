@@ -1,23 +1,22 @@
-import { useTranslation } from "react-i18next";
 import type { FunctionComponent } from "@/common/types";
+import { MainLayout } from "@/components/layout/MainLayout/MainLayout";
 
 export const Home = (): FunctionComponent => {
-	const { t, i18n } = useTranslation();
-
-	const onTranslateButtonClick = async (): Promise<void> => {
-		if (i18n.resolvedLanguage === "en") {
-			await i18n.changeLanguage("es");
-		} else {
-			await i18n.changeLanguage("en");
-		}
-	};
-
 	return (
-		<div className="bg-blue-300  font-bold w-screen h-screen flex flex-col justify-center items-center">
-			<p className="text-white text-6xl">{t("home.greeting")}</p>
-			<button type="submit" onClick={onTranslateButtonClick}>
-				translate
-			</button>
-		</div>
+		<MainLayout>
+			<div className="container mx-auto py-12 px-4">
+				<section className="text-center mb-16">
+					<h1 className="text-5xl font-bold text-green-800 mb-4">
+						Transform Your Outdoor Space
+					</h1>
+					<p className="text-xl text-gray-600 mb-8">
+						Professional landscaping services to create your dream garden
+					</p>
+					<button className="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700">
+						Get Started
+					</button>
+				</section>
+			</div>
+		</MainLayout>
 	);
 };
