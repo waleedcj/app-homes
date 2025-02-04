@@ -5,20 +5,29 @@ interface CardProps {
   description: string;
   imageUrl?: string;
   className?: string;
+  titleClass?: string;
+  textClass?: string;
 }
 
-export const Card = ({ title, description, imageUrl, className = "" }: CardProps): FunctionComponent => {
+export const Card = ({ 
+  title, 
+  description, 
+  imageUrl, 
+  className = "",
+  titleClass = "text-primary",
+  textClass = "text-brand-black"
+}: CardProps): FunctionComponent => {
   return (
-    <div className={`bg-white rounded-lg shadow-lg overflow-hidden ${className}`}>
+    <div className={`bg-neutral rounded-lg shadow-lg overflow-hidden border border-tertiary transition-all hover:shadow-xl ${className}`}>
       {imageUrl && (
-        <div className="h-48 overflow-hidden">
+        <div className="h-56 overflow-hidden">
           <img src={imageUrl} alt={title} className="w-full h-full object-cover" />
         </div>
       )}
       <div className="p-6">
-        <h3 className="text-xl font-bold text-green-800 mb-2">{title}</h3>
-        <p className="text-gray-600">{description}</p>
+        <h3 className={`text-xl font-bold mb-2 ${titleClass}`}>{title}</h3>
+        <p className={`${textClass}`}>{description}</p>
       </div>
     </div>
   );
-}; 
+};

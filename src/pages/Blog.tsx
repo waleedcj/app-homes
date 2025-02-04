@@ -22,7 +22,7 @@ export const Blog = (): FunctionComponent => {
   return (
     <MainLayout>
       <div className="container mx-auto py-12 px-4">
-        <h1 className="text-4xl font-bold text-green-800 mb-8">Latest Blog Posts</h1>
+        <h1 className="text-4xl font-bold text-primary mb-8">Latest Blog Posts</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
             <Card
@@ -30,11 +30,13 @@ export const Blog = (): FunctionComponent => {
               title={post.title}
               description={post.description}
               imageUrl={post.imageUrl}
-              className="hover:shadow-xl transition-shadow"
+              className="hover:shadow-xl transition-shadow bg-neutral border border-tertiary"
+              titleClass="text-primary"
+              textClass="text-brand-black"
             />
           ))}
         </div>
       </div>
     </MainLayout>
   );
-}; 
+};

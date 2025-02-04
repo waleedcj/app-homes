@@ -29,7 +29,7 @@ export const Services = (): FunctionComponent => {
   return (
     <MainLayout>
       <div className="container mx-auto py-12 px-4">
-        <h1 className="text-4xl font-bold text-green-800 mb-8 text-center">Our Services</h1>
+        <h1 className="text-4xl font-bold text-primary mb-8 text-center">Our Services</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
             <Card
@@ -37,10 +37,13 @@ export const Services = (): FunctionComponent => {
               title={service.title}
               description={service.description}
               imageUrl={service.imageUrl}
+              className="border border-tertiary bg-neutral"
+              titleClass="text-primary"
+              textClass="text-brand-black"
             />
           ))}
         </div>
       </div>
     </MainLayout>
   );
-}; 
+};
