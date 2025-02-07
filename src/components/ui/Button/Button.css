@@ -1,0 +1,170 @@
+/* Base button styles */
+.button-pushable {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+  }
+  
+  .button-edge {
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+  }
+  
+  .button-front {
+    display: block;
+    position: relative;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    color: rgb(249, 251, 243);
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+  }
+  
+  /* Hover and active states */
+  .button-pushable:hover {
+    filter: brightness(110%);
+    -webkit-filter: brightness(110%);
+  }
+  
+  .button-pushable:hover .button-front {
+    transform: translateY(-6px);
+    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+  }
+  
+  .button-pushable:active .button-front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+  }
+  
+  .button-pushable:hover .button-shadow {
+    transform: translateY(4px);
+    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+  }
+  
+  .button-pushable:active .button-shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+  }
+  
+  .button-pushable:focus:not(:focus-visible) {
+    outline: none;
+  }
+  
+  /* Variants */
+  .primary .button-edge {
+    background: linear-gradient(
+      to left,
+      var(--fresh-green-dark) 0%,
+      var(--fresh-green-dark) 8%,
+      var(--fresh-green-dark) 92%,
+      var(--fresh-green-dark) 100%
+    );
+  }
+  .primary .button-front {
+    background: var(--fresh-green-dark);
+  }
+  
+  .secondary .button-edge {
+    background: linear-gradient(
+      to left,
+      var(--light-green) 0%,
+      var(--light-green) 8%,
+      var(--light-green) 92%,
+      var(--light-green) 100%
+    );
+  }
+  .secondary .button-front {
+    background: var(--light-green);
+  }
+  
+  .forest .button-edge {
+    background: linear-gradient(
+      to left,
+      var(--forest-green) 0%,
+      var(--forest-green) 8%,
+      var(--forest-green) 92%,
+      var(--forest-green) 100%
+    );
+  }
+  .forest .button-front {
+    background: var(--forest-green);
+  }
+  
+  .sage .button-edge {
+    background: linear-gradient(
+      to left,
+      var(--sage-green) 0%,
+      var(--sage-green) 8%,
+      var(--sage-green) 92%,
+      var(--sage-green) 100%
+    );
+  }
+  .sage .button-front {
+    background: var(--sage-green);
+  }
+  
+  .earth .button-edge {
+    background: linear-gradient(
+      to left,
+      var(--earth-brown) 0%,
+      var(--earth-brown) 8%,
+      var(--earth-brown) 92%,
+      var(--earth-brown) 100%
+    );
+  }
+  .earth .button-front {
+    background: var(--earth-brown);
+  }
+  
+  /* Sizes */
+  .sm .button-front {
+    padding: 8px 16px;
+    font-size: 0.875rem;
+  }
+  
+  .md .button-front {
+    padding: 10px 24px;
+    font-size: 1.125rem;
+  }
+  
+  .lg .button-front {
+    padding: 14px 28px;
+    font-size: 1.25rem;
+  }
+  
+  @media (min-width: 768px) {
+    .md .button-front {
+      font-size: 1.25rem;
+      padding: 10px 42px;
+    }
+    
+    .lg .button-front {
+      font-size: 1.5rem;
+      padding: 14px 48px;
+    }
+  }

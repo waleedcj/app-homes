@@ -2,44 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer utilities {
 	.font-condensed {
-	  font-stretch: condensed;
+		font-stretch: condensed;
 	}
-  }
+}
 
 @font-face {
-	font-family: 'Roboto';
-	src: url('@/assets/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf') format('truetype');
+	font-family: "DM Sans";
+	src: url("@/assets/fonts/DM_Sans/DMSans-VariableFont_opsz,wght.ttf")
+		format("truetype");
 	/* Adjust the ranges according to your font file’s specifications */
 	/* font-weight: 100 1000;      
 	font-stretch: 75% 100%;       */
-  }
-  :root {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-    --fresh-green: #4A6B3D;
-  --forest-green: #2F4B25;     
-  --sage-green: #8A9B7E;       
-  --earth-brown: #685C45;     
-  --cream: #F5F3E7;           
-  --slate-gray: #3A3A3A;       
-  --moss-green: #5B7052;       
-	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
+}
+@font-face {
+	font-family: "Plus Jakarta Sans";
+	src: url("@/assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf")
+		format("truetype");
+	/* Adjust the ranges according to your font file’s specifications */
+	/* font-weight: 100 1000;      
+	font-stretch: 75% 100%;       */
+}
+:root {
+	font-family: "DM Sans", "Plus Jakarta Sans";
+	line-height: 1.5;
+	font-weight: 400;
+	--fresh-green-dark: #374836;
+	--fresh-green-light: #E8E7D272;
+	--forest-green: #2f4b25;
+	--light-green: #6d7a6a;
+	--sage-green: #8a9b7e;
+	--earth-brown: #685c45;
+	--cream: #f5f3e7;
+	--slate-gray: #3a3a3a;
+	--moss-green: #5b7052;
+	--background-dark: #374836;
+	--background-light: #E8E7D272;
+	--background-icon: #E8EFEA;
+	--box-shadow: 0 2px 6px rgba(var(--gray), 25%),
+		0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
 
 	/* spacing */
 	--spacing-md: 16px;
 	--spacing-lg: 32px;
 
 	--borderRadius: 12px;
-    --radius: 0.5rem;
-  }
+	--radius: 0.5rem;
+}
 
-  .custom-clip-path {
-	border-radius: 25% 75% 25% 75% / 100% 0% 100% 0% ;
+body {
+	background-color: #E8E7D272; /* Replace with your desired color */
   }
   
+
+.custom-clip-path {
+	border-radius: 25% 75% 25% 75% / 100% 0% 100% 0%;
+}
+
 

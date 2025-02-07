@@ -2,28 +2,27 @@ import type { FunctionComponent } from "@/common/types";
 import { MainLayout } from "@/components/layout/MainLayout/MainLayout";
 import { Card } from "@/components/ui/Card/Card";
 
-const services = [
+
+const demoServices = [
   {
-    title: "Landscape Design",
-    description: "Custom landscape design services tailored to your vision and property.",
-    imageUrl: "/src/assets/images/landscape-design.jpg"
+    tags: [{ label: "Garden" }, { label: "Inner Court" }, { label: "Home" }],
+    title: "GARDEN DESIGN",
+    description: "Crafting the perfect garden space. We will design a garden that suits your lifestyle.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-jhNVfiGswhCaFLTBe6dMHBZ3umBlSp.png",
   },
   {
-    title: "Garden Maintenance",
-    description: "Regular maintenance to keep your garden looking beautiful all year round.",
-    imageUrl: "/src/assets/images/garden-maintenance.jpg"
+    tags: [{ label: "Plant" }, { label: "Garden" }, { label: "Landscape Design" }],
+    title: "PLANT SELECTION",
+    description: "Hand-picked greenery for your oasis. Our experts select the right plants.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-jhNVfiGswhCaFLTBe6dMHBZ3umBlSp.png",
   },
   {
-    title: "Hardscaping",
-    description: "Installation of patios, walkways, retaining walls, and other hardscape features.",
-    imageUrl: "/src/assets/images/hardscaping.jpg"
+    tags: [{ label: "Home" }, { label: "Garden" }, { label: "Garden" }, { label: "Garden" }, { label: "Landscape Design" }],
+    title: "HARDSCAPING",
+    description: "Adding structure to your landscape. We create functional and aesthetic hardscape features.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-jhNVfiGswhCaFLTBe6dMHBZ3umBlSp.png",
   },
-  {
-    title: "Irrigation Systems",
-    description: "Design and installation of efficient irrigation systems.",
-    imageUrl: "/src/assets/images/irrigation.jpg"
-  }
-];
+]
 
 export const Services = (): FunctionComponent => {
   return (
@@ -31,15 +30,16 @@ export const Services = (): FunctionComponent => {
       <div className="container mx-auto py-12 px-4">
         <h1 className="text-4xl font-bold text-primary mb-8 text-center">Our Services</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
+          {demoServices.map((service, index) => (
             <Card
-              key={service.title}
-              title={service.title}
-              description={service.description}
-              imageUrl={service.imageUrl}
-              className="border border-tertiary bg-neutral"
-              titleClass="text-primary"
-              textClass="text-brand-black"
+              key={index}
+              // title={service.title}
+              // description={service.description}
+              // imageUrl={service.imageUrl}
+              // className="border border-tertiary bg-neutral"
+              // titleClass="text-primary"
+              // textClass="text-brand-black"
+              card={service}
             />
           ))}
         </div>

@@ -31,35 +31,35 @@ const Carousel: React.FC<CarouselProps> = (props) => {
 		resetOrStop();
 	}, []);
 
-	const {
-		prevBtnDisabled,
-		nextBtnDisabled,
-		onPrevButtonClick,
-		onNextButtonClick,
-	} = usePrevNextButtons(emblaApi, onNavButtonClick);
+	// const {
+	// 	prevBtnDisabled,
+	// 	nextBtnDisabled,
+	// 	onPrevButtonClick,
+	// 	onNextButtonClick,
+	// } = usePrevNextButtons(emblaApi, onNavButtonClick);
 
 	return (
 		<section className="embla">
-			<div className="embla__viewport" ref={emblaRef}>
+			<div className="embla__viewport rounded-lg" ref={emblaRef}>
 				<div className="embla__container">
 					{slides?.map((slide, index) => (
 						<div className="embla__slide" key={index}>
 							<img
 								src={slide.src}
 								alt={`Slide ${index + 1}`}
-								className="w-full h-[600px] object-cover rounded-lg"
+								className="w-full h-auto object-contain rounded-lg" 
 							/>
 						</div>
 					))}
 				</div>
 			</div>
 
-			<div className="embla__controls">
+			{/* <div className="embla__controls">
 				<div className="embla__buttons">
 					<PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
 					<NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
 				</div>
-			</div>
+			</div> */}
 		</section>
 	);
 };

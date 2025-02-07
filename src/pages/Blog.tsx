@@ -7,13 +7,13 @@ const blogPosts = [
     title: "10 Tips for a Sustainable Garden",
     description: "Learn how to create and maintain an eco-friendly garden that thrives.",
     date: "2024-01-15",
-    imageUrl: "/src/assets/images/sustainable-garden.jpg"
+    image: "/src/assets/images/sustainable-garden.jpg"
   },
   {
     title: "Spring Gardening Essentials",
     description: "Get your garden ready for spring with these essential tips and tricks.",
     date: "2024-02-01",
-    imageUrl: "/src/assets/images/spring-garden.jpg"
+    image: "/src/assets/images/spring-garden.jpg"
   },
   // Add more blog posts
 ];
@@ -27,12 +27,7 @@ export const Blog = (): FunctionComponent => {
           {blogPosts.map((post) => (
             <Card
               key={post.title}
-              title={post.title}
-              description={post.description}
-              imageUrl={post.imageUrl}
-              className="hover:shadow-xl transition-shadow bg-neutral border border-tertiary"
-              titleClass="text-primary"
-              textClass="text-brand-black"
+             card={post}
             />
           ))}
         </div>

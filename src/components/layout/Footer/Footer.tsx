@@ -2,7 +2,7 @@ import type { FunctionComponent } from "@/common/types";
 
 export const Footer = (): FunctionComponent => {
   return (
-<footer className="bg-secondary text-neutral p-8">
+<footer className="bg-dark-bg text-neutral p-8">
 <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
           <h3 className="text-xl font-bold mb-4">Pure.Landscaping.Services</h3>

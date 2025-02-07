@@ -1,16 +1,16 @@
 import { Link } from "@tanstack/react-router";
 import Icons from "@/assets/images/svgs/svgComponent";
+import brandLogo from "@/assets/images/mishmish.png"
 import type { FunctionComponent } from "@/common/types";
 
 export const Header = (): FunctionComponent => {
   return (
-    <header className="bg-primary text-neutral p-2 shadow-md">
+    <header className=" text-black p-2">
       <nav className="container mx-auto flex justify-between items-center">
         <div className="flex items-cente"> {/* Changed to items-end */}
           <Link to="/">
-            <Icons tech='BrandIcon' className="w-16 h-16" />
+            <img src={brandLogo} className="w-[150px]"/>
           </Link>
-          <h1 className="text-2xl font-extrabold self-center font-condensed italic mt-4">LANDSCAPING</h1> {/* Added leading-none */}
         </div>
         <ul className="flex space-x-6">
           <li><Link to="/" className="hover:text-tertiary transition-colors">Home</Link></li>

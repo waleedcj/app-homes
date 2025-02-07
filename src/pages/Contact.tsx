@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { FunctionComponent } from "@/common/types";
 import { MainLayout } from "@/components/layout/MainLayout/MainLayout";
-import { Button } from "@/components/ui/Button/Button";
+import { Button } from "@/components/ui/Button";
 
 export const Contact = (): FunctionComponent => {
   const [formData, setFormData] = useState({
